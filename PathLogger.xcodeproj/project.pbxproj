@@ -7,13 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C42355E1AE93F4C00CE86A6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C42355D1AE93F4C00CE86A6 /* Colors.swift */; };
 		4CD59B081AC5ED7500ED4324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD59B071AC5ED7500ED4324 /* AppDelegate.swift */; };
 		4CD59B0B1AC5ED7500ED4324 /* PathLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CD59B091AC5ED7500ED4324 /* PathLogger.xcdatamodeld */; };
 		4CD59B0D1AC5ED7500ED4324 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD59B0C1AC5ED7500ED4324 /* ViewController.swift */; };
 		4CD59B101AC5ED7500ED4324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD59B0E1AC5ED7500ED4324 /* Main.storyboard */; };
 		4CD59B121AC5ED7500ED4324 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD59B111AC5ED7500ED4324 /* Images.xcassets */; };
-		4CD59B151AC5ED7500ED4324 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD59B131AC5ED7500ED4324 /* LaunchScreen.xib */; };
 		4CD59B211AC5ED7500ED4324 /* PathLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD59B201AC5ED7500ED4324 /* PathLoggerTests.swift */; };
+		4CD59B2B1AC5EDB500ED4324 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD59B2A1AC5EDB500ED4324 /* MapKit.framework */; };
+		4CD59B2D1AC5EDE900ED4324 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD59B2C1AC5EDE900ED4324 /* CoreData.framework */; };
+		4CD59B2F1AC5EDEF00ED4324 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD59B2E1AC5EDEF00ED4324 /* CoreGraphics.framework */; };
+		4CD59B311AC5EDF700ED4324 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD59B301AC5EDF700ED4324 /* CoreLocation.framework */; };
+		4CFB99D31AC5F4EA00913A3C /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CFB99D21AC5F4EA00913A3C /* ionicons.ttf */; };
+		4CFB99D41AC5F4EA00913A3C /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CFB99D21AC5F4EA00913A3C /* ionicons.ttf */; };
+		4CFB99D71AC601C200913A3C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB99D61AC601C200913A3C /* UIColorExtension.swift */; };
+		4CFB99D81AC601C200913A3C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB99D61AC601C200913A3C /* UIColorExtension.swift */; };
+		4CFB99DA1AC615C600913A3C /* PathManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB99D91AC615C600913A3C /* PathManagerViewController.swift */; };
+		4CFB99DB1AC615C600913A3C /* PathManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB99D91AC615C600913A3C /* PathManagerViewController.swift */; };
+		4CFB99DD1AC61A6700913A3C /* DistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB99DC1AC61A6700913A3C /* DistanceCalculator.swift */; };
+		4CFB99DE1AC61A6700913A3C /* DistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB99DC1AC61A6700913A3C /* DistanceCalculator.swift */; };
+		4CFB99E11AC61C4000913A3C /* PathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB99E01AC61C4000913A3C /* PathManager.swift */; };
+		4CFB99E21AC61C4000913A3C /* PathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB99E01AC61C4000913A3C /* PathManager.swift */; };
+		4CFB99E41AC61C9600913A3C /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB99E31AC61C9600913A3C /* Path.swift */; };
+		4CFB99E51AC61C9600913A3C /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB99E31AC61C9600913A3C /* Path.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C42355D1AE93F4C00CE86A6 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4CD59B021AC5ED7500ED4324 /* PathLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD59B061AC5ED7500ED4324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD59B071AC5ED7500ED4324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,10 +51,19 @@
 		4CD59B0C1AC5ED7500ED4324 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4CD59B0F1AC5ED7500ED4324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CD59B111AC5ED7500ED4324 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4CD59B141AC5ED7500ED4324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4CD59B1A1AC5ED7500ED4324 /* PathLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PathLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD59B1F1AC5ED7500ED4324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD59B201AC5ED7500ED4324 /* PathLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathLoggerTests.swift; sourceTree = "<group>"; };
+		4CD59B2A1AC5EDB500ED4324 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4CD59B2C1AC5EDE900ED4324 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4CD59B2E1AC5EDEF00ED4324 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4CD59B301AC5EDF700ED4324 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4CFB99D21AC5F4EA00913A3C /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
+		4CFB99D61AC601C200913A3C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		4CFB99D91AC615C600913A3C /* PathManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathManagerViewController.swift; sourceTree = "<group>"; };
+		4CFB99DC1AC61A6700913A3C /* DistanceCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceCalculator.swift; sourceTree = "<group>"; };
+		4CFB99E01AC61C4000913A3C /* PathManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathManager.swift; sourceTree = "<group>"; };
+		4CFB99E31AC61C9600913A3C /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +71,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD59B311AC5EDF700ED4324 /* CoreLocation.framework in Frameworks */,
+				4CD59B2F1AC5EDEF00ED4324 /* CoreGraphics.framework in Frameworks */,
+				4CD59B2D1AC5EDE900ED4324 /* CoreData.framework in Frameworks */,
+				4CD59B2B1AC5EDB500ED4324 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,9 +88,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C42355F1AE93F5400CE86A6 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4C42355D1AE93F4C00CE86A6 /* Colors.swift */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
 		4CD59AF91AC5ED7500ED4324 = {
 			isa = PBXGroup;
 			children = (
+				4CFB99D51AC5F4F800913A3C /* Fonts */,
+				4CD59B321AC5EE0500ED4324 /* Frameworks */,
 				4CD59B041AC5ED7500ED4324 /* PathLogger */,
 				4CD59B1D1AC5ED7500ED4324 /* PathLoggerTests */,
 				4CD59B031AC5ED7500ED4324 /* Products */,
@@ -79,11 +119,13 @@
 		4CD59B041AC5ED7500ED4324 /* PathLogger */ = {
 			isa = PBXGroup;
 			children = (
+				4CFB99DF1AC61A6E00913A3C /* Model */,
 				4CD59B071AC5ED7500ED4324 /* AppDelegate.swift */,
+				4C42355F1AE93F5400CE86A6 /* Support */,
 				4CD59B0C1AC5ED7500ED4324 /* ViewController.swift */,
+				4CFB99D91AC615C600913A3C /* PathManagerViewController.swift */,
 				4CD59B0E1AC5ED7500ED4324 /* Main.storyboard */,
 				4CD59B111AC5ED7500ED4324 /* Images.xcassets */,
-				4CD59B131AC5ED7500ED4324 /* LaunchScreen.xib */,
 				4CD59B091AC5ED7500ED4324 /* PathLogger.xcdatamodeld */,
 				4CD59B051AC5ED7500ED4324 /* Supporting Files */,
 			);
@@ -113,6 +155,37 @@
 				4CD59B1F1AC5ED7500ED4324 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CD59B321AC5EE0500ED4324 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CFB99D61AC601C200913A3C /* UIColorExtension.swift */,
+				4CD59B301AC5EDF700ED4324 /* CoreLocation.framework */,
+				4CD59B2E1AC5EDEF00ED4324 /* CoreGraphics.framework */,
+				4CD59B2C1AC5EDE900ED4324 /* CoreData.framework */,
+				4CD59B2A1AC5EDB500ED4324 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CFB99D51AC5F4F800913A3C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4CFB99D21AC5F4EA00913A3C /* ionicons.ttf */,
+			);
+			name = Fonts;
+			path = PathLogger;
+			sourceTree = "<group>";
+		};
+		4CFB99DF1AC61A6E00913A3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CFB99DC1AC61A6700913A3C /* DistanceCalculator.swift */,
+				4CFB99E01AC61C4000913A3C /* PathManager.swift */,
+				4CFB99E31AC61C9600913A3C /* Path.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +237,15 @@
 				TargetAttributes = {
 					4CD59B011AC5ED7500ED4324 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 6E5RVX7ELK;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4CD59B191AC5ED7500ED4324 = {
 						CreatedOnToolsVersion = 6.3;
@@ -195,8 +277,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFB99D31AC5F4EA00913A3C /* ionicons.ttf in Resources */,
 				4CD59B101AC5ED7500ED4324 /* Main.storyboard in Resources */,
-				4CD59B151AC5ED7500ED4324 /* LaunchScreen.xib in Resources */,
 				4CD59B121AC5ED7500ED4324 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFB99D41AC5F4EA00913A3C /* ionicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,9 +298,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFB99E11AC61C4000913A3C /* PathManager.swift in Sources */,
+				4C42355E1AE93F4C00CE86A6 /* Colors.swift in Sources */,
+				4CFB99DD1AC61A6700913A3C /* DistanceCalculator.swift in Sources */,
+				4CFB99E41AC61C9600913A3C /* Path.swift in Sources */,
 				4CD59B0D1AC5ED7500ED4324 /* ViewController.swift in Sources */,
 				4CD59B0B1AC5ED7500ED4324 /* PathLogger.xcdatamodeld in Sources */,
+				4CFB99DA1AC615C600913A3C /* PathManagerViewController.swift in Sources */,
 				4CD59B081AC5ED7500ED4324 /* AppDelegate.swift in Sources */,
+				4CFB99D71AC601C200913A3C /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +314,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFB99DE1AC61A6700913A3C /* DistanceCalculator.swift in Sources */,
+				4CFB99DB1AC615C600913A3C /* PathManagerViewController.swift in Sources */,
 				4CD59B211AC5ED7500ED4324 /* PathLoggerTests.swift in Sources */,
+				4CFB99E21AC61C4000913A3C /* PathManager.swift in Sources */,
+				4CFB99E51AC61C9600913A3C /* Path.swift in Sources */,
+				4CFB99D81AC601C200913A3C /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,14 +340,6 @@
 				4CD59B0F1AC5ED7500ED4324 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4CD59B131AC5ED7500ED4324 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4CD59B141AC5ED7500ED4324 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -346,9 +432,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PathLogger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -356,9 +448,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PathLogger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 			};
 			name = Release;
 		};
@@ -415,6 +512,7 @@
 				4CD59B261AC5ED7500ED4324 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CD59B271AC5ED7500ED4324 /* Build configuration list for PBXNativeTarget "PathLoggerTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +521,7 @@
 				4CD59B291AC5ED7500ED4324 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
