@@ -12,6 +12,7 @@ class PathManagerViewController: UIViewController, UITableViewDelegate, UITableV
     tableView.dataSource = self
     dateFormatter.dateStyle = .ShortStyle
     dateFormatter.timeStyle = .ShortStyle
+    pathstore.saveContext()
   }
   
   override func didReceiveMemoryWarning() {
@@ -24,6 +25,7 @@ class PathManagerViewController: UIViewController, UITableViewDelegate, UITableV
     } else {
       pathstore.viewedPath = nil
     }
+    pathstore.saveContext()
     backControllerAction()
   }
   
@@ -67,6 +69,7 @@ class PathManagerViewController: UIViewController, UITableViewDelegate, UITableV
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     if editingStyle == UITableViewCellEditingStyle.Delete {
       pathstore.removeRecordingAt(indexPath.row)
+      pathstore.saveContext()
       tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
     }
   }

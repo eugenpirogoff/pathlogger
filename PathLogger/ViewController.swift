@@ -27,8 +27,10 @@ class ViewController: UIViewController {
     super.viewWillAppear(true)
     updateViewedOverlays()
     setRegionToViewedPath()
-    if pathstore.viewedPath == nil {
+    if pathstore.recoding && (pathstore.viewedPath == pathstore.recordingPath) {
       trackingOn()
+    } else {
+      fadeInCenter()
     }
   }
 
