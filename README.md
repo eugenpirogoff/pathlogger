@@ -7,6 +7,10 @@ It is prodly made with:
 - CoreLocation
 - MapKit
 
+
+![Start Screen](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/1_startup.png) ![Start Screen](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/2_recording.png) ![Start Screen](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/3_recordings.png)
+
+
 # ToDo
 - [ ] [bug fixes](https://github.com/eugenpirogoff/PathLogger/issues) 
 - [ ] export to GPX or [GEOJSON](http://geojson.org)
