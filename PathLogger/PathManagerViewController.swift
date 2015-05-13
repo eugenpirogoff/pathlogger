@@ -19,11 +19,20 @@ class PathManagerViewController: UIViewController, UITableViewDelegate, UITableV
   }
   
   @IBAction func backAction() {
+    if pathstore.recoding {
+      pathstore.viewedPath = pathstore.recordingPath
+    } else {
+      pathstore.viewedPath = nil
+    }
+    backControllerAction()
+  }
+  
+  func backControllerAction(){
     if self.presentingViewController != nil {
       self.dismissViewControllerAnimated(true, completion: nil)
     }
   }
-  
+    
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
     return UIStatusBarStyle.LightContent
   }
@@ -48,7 +57,7 @@ class PathManagerViewController: UIViewController, UITableViewDelegate, UITableV
 
   func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
     pathstore.loadRecordingToView(indexPath.row)
-    self.backAction()
+    backControllerAction()
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

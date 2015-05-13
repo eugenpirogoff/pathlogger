@@ -14,8 +14,9 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    initCL()
     initMK()
+    initCL()
+    fadeOutCenter()
   }
 
   override func didReceiveMemoryWarning() {
@@ -26,6 +27,9 @@ class ViewController: UIViewController {
     super.viewWillAppear(true)
     updateViewedOverlays()
     setRegionToViewedPath()
+    if pathstore.viewedPath == nil {
+      trackingOn()
+    }
   }
 
   override func viewWillDisappear(animated: Bool) {
@@ -37,6 +41,7 @@ class ViewController: UIViewController {
       initCL()
       startCL()
       pathstore.startRecording()
+      fadeInCenter()
     } else {
       stopCL()
       pathstore.stopRecording()
@@ -44,10 +49,7 @@ class ViewController: UIViewController {
   }
 
   @IBAction func centerAction(sender: UIButton) {
-    mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
-    UIView.animateWithDuration(0.4, animations: {
-      self.centerButton.alpha = 0.0
-    })
+    fadeOutCenter()
   }
   
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -57,20 +59,32 @@ class ViewController: UIViewController {
   override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
     if let touch = touches.first as? UITouch {
       if !CGRectContainsPoint(self.controlsView.frame, touch.locationInView(self.view)) {
-        mapView.setUserTrackingMode(MKUserTrackingMode.None, animated: true)
-        UIView.animateWithDuration(0.4, animations: {
-          self.centerButton.alpha = 1.0
-        })
+        fadeInCenter()
+        trackingOff()
       }
     }
     super.touchesBegan(touches, withEvent: event)
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if (segue.identifier == "PathManagerSegue") {
-//      let pathManagerViewController = segue.destinationViewController as! PathManagerViewController
-//        pathManagerViewController.pathmanager = self.pathmanager
-    }
+  func fadeInCenter(){
+    UIView.animateWithDuration(0.4, animations: {
+      self.centerButton.alpha = 1.0
+    })
+  }
+  
+  func fadeOutCenter(){
+    trackingOn()
+    UIView.animateWithDuration(0.4, animations: {
+      self.centerButton.alpha = 0.0
+    })
+  }
+  
+  func trackingOff(){
+    mapView.setUserTrackingMode(MKUserTrackingMode.None, animated: true)
+  }
+  
+  func trackingOn(){
+    mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
   }
 }
 
