@@ -12,4 +12,4 @@ It is prodly made with:
 # ToDo
 - [ ] [bug fixes](https://github.com/eugenpirogoff/PathLogger/issues) 
 - [ ] export to GPX or [GEOJSON](http://geojson.org)
-
+- [ ] add a timer for recordings
