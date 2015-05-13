@@ -18,33 +18,42 @@ class ViewController: UIViewController {
   @IBOutlet weak var controlsView: UIVisualEffectView!
   
   var locationmanager : CLLocationManager?
-  var pathmanager : PathManager?
-  var currentPath : Path?
+  let pathstore: PathStore = PathStore.sharedInstance
+//  let act = Interactor.sharedInstance
   
   override func viewDidLoad() {
     super.viewDidLoad()
     initCL()
     initMK()
-    pathmanager = PathManager()
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(true)
+//    if let viewedPath = pathstore.currentPath {
+//      mapView.addOverlay(viewedPath.polyline)
+//    }
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(true)
+    if let overlays = mapView.overlays {
+      mapView.removeOverlays(overlays)
+    }
+  }
 
   @IBAction func recAction(sender: UISwitch) {
     if sender.on {
       initCL()
       startCL()
-      currentPath = Path()
-//      recording start, start tracking fir CLManager and draw Path to Map
+      pathstore.createPath()
     } else {
       stopCL()
-      if let pathmanager = self.pathmanager, currentpath = self.currentPath {
-        pathmanager.addPath(currentpath)
-      }
-//    save recordet Path into a Core Data Object and Push them to PathManager so it can be Viewed in other View
+      pathstore.savePath()
     }
   }
 
@@ -73,8 +82,8 @@ class ViewController: UIViewController {
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if (segue.identifier == "PathManagerSegue") {
-      let pathManagerViewController = segue.destinationViewController as! PathManagerViewController
-        pathManagerViewController.pathmanager = self.pathmanager
+//      let pathManagerViewController = segue.destinationViewController as! PathManagerViewController
+//        pathManagerViewController.pathmanager = self.pathmanager
     }
   }
 }
@@ -102,12 +111,11 @@ extension ViewController: CLLocationManagerDelegate {
   }
   
   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-    if let location = locations.last as? CLLocation {
-      if let path = self.currentPath {
-        path.addLocation(location)
-        mapView.addOverlay(path.polyline())
-      }
-    }
+//    if let location = locations.last as? CLLocation {
+//      self.pathstore.currentPath?.addLocation(location)
+//      mapView.removeOverlay(self.pathstore.currentPath?._oldPolyline)
+//      mapView.addOverlay(self.pathstore.currentPath?.polyline)
+//    }
   }
 }
 
@@ -123,8 +131,8 @@ extension ViewController: MKMapViewDelegate {
   func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
     if overlay is MKPolyline {
       var polylineRenderer = MKPolylineRenderer(overlay: overlay)
-      polylineRenderer.strokeColor = UIColor(rgba: "#F5741D")
-      polylineRenderer.lineWidth = 6.0
+      polylineRenderer.strokeColor = UIColor.orangeColor()
+      polylineRenderer.lineWidth = 4.5
       return polylineRenderer
     }
     return nil

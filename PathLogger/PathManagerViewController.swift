@@ -8,25 +8,24 @@
 
 import UIKit
 
-class PathManagerViewController: UIViewController {
+class PathManagerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var tableView: UITableView!
-  
-  var pathmanager : PathManager?
+  let dateFormatter = NSDateFormatter()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.delegate = self
     tableView.dataSource = self
-    // Do any additional setup after loading the view.
+    dateFormatter.dateStyle = .ShortStyle
+    dateFormatter.timeStyle = .ShortStyle
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
-  @IBAction func backAction(sender: UIButton) {
+  @IBAction func backAction() {
     if self.presentingViewController != nil {
       self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -36,63 +35,55 @@ class PathManagerViewController: UIViewController {
     return UIStatusBarStyle.LightContent
   }
   
-  
-  /*
-  // MARK: - Navigation
-  
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    self.tableView.reloadData()
   }
-  */
-  
-}
-
-// MARK: UITableViewDelegate
-extension PathManagerViewController: UITableViewDelegate{
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCellWithIdentifier("pathcell") as! UITableViewCell
-    if let pathManager = self.pathmanager {
-      let currentPath = pathManager.selectPath(indexPath.row)
-      if pathManager._selected == indexPath.row {
-        cell.backgroundColor = UIColor.yellowColor()
-      }
-      cell.textLabel?.text = currentPath?.description
+    let path = PathStore.sharedInstance.loadPathAt(indexPath.row)
+    var distance = NSString()
+    if path.distanceInMeter > 1000 {
+      distance = NSString(format: "%.2f km", path.distanceInKilometer)
+    } else {
+      distance = NSString(format: "%.2f m", path.distanceInMeter)
     }
-    
-    //        let current_path = self.pathManager?.selectPathAtIndex(indexPath.row)
-    //        cell.textLabel!.text = current_path!.name()
+    cell.textLabel?.text = "\(dateFormatter.stringFromDate(path.startTimestamp)), \(distance)"
     return cell
   }
   
-  func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-    tableView.deselectRowAtIndexPath(indexPath, animated: true)
-//    var selectedPath = pathManager?.selectPathAtIndex(indexPath.row)
-    
-  }
+//  func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+//    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//    PathStore.sharedInstance.currentPath = PathStore.sharedInstance.loadPathAt(indexPath.row)
+//    self.backAction()
+//  }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if let pathManager = self.pathmanager {
-      return pathManager.count()
-    }
-    return 0
+    return PathStore.sharedInstance.count
   }
   
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//    if PathStore.sharedInstance.allPaths.count == 0 { return }
     if editingStyle == UITableViewCellEditingStyle.Delete {
-      if let pathManager = self.pathmanager {
-        pathManager.removePath(indexPath.row)
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
-      }
-      //            pathManager?.deletePathAtIndex(indexPath.row)
-      //            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+      PathStore.sharedInstance.removePathAt(indexPath.row)
+      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
     }
   }
-}
+  
+  func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+    return UITableViewCellEditingStyle.Delete
+  }
 
-// MARK: UUTableViewDataSource
-extension PathManagerViewController: UITableViewDataSource{
-
+  func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+    
+  }
+//  func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//    if PathStore.sharedInstance.allPaths.count == 0 {
+//      return false
+//    } else {
+//      return true
+//    }
+//  }
+  
 }

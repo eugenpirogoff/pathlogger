@@ -8,42 +8,48 @@
 
 import Foundation
 import CoreLocation
+import CoreData
 import MapKit
 
-class Path: Printable {
+class Path: NSManagedObject, Printable {
   
-  var _path : [CLLocation]
-  var _name : NSDate
-  let _dateformatter : NSDateFormatter
+  @NSManaged var path : Array<CLLocation>
+  @NSManaged var startTimestamp: NSDate
+  @NSManaged var endTimestamp: NSDate
+  @NSManaged var distance: NSNumber
   
-  init(){
-    _path = []
-    _name = NSDate()
-    _dateformatter = NSDateFormatter()
-    _dateformatter.dateFormat = "yyyy-MM-dd"
+  var duration: NSTimeInterval {
+    get {
+      return endTimestamp.timeIntervalSinceDate(startTimestamp)
+    }
   }
   
-  func addLocation(new_location : CLLocation) {
-    self._path.append(new_location)
+  var distanceInMeter : Double {
+    get {
+      return DistanceCalculator(path: path).distanceInMeter()
+    }
   }
   
-  func polyline() -> MKPolyline {
-    var coords = self._path.map{$0.coordinate}
-    return MKPolyline(coordinates: &coords, count: coords.count)
+  var distanceInKilometer : Double {
+    get {
+      return DistanceCalculator(path: path).distanceInKilometer()
+    }
   }
   
-  var name : String {
-    return _dateformatter.stringFromDate(_name) as String
+  var polyline: MKPolyline {
+    get{
+      var coords = self.path.map{$0.coordinate}
+      return MKPolyline(coordinates: &coords, count: coords.count)
+    }
   }
   
-  var distance : Double {
-    return DistanceCalculator(path: self._path).distanceInKilometer()
+  func addLocation(location: CLLocation) {
+    self.path.append(location)
   }
   
-  var description : String {
-    let distance_formated = NSString(format: "%.2f", self.distance)
-    return "\(self.name), \(distance_formated) km"
+  override func awakeFromInsert() {
+    super.awakeFromInsert()
+    path = [CLLocation]()
+    startTimestamp = NSDate()
   }
-  
 }
-

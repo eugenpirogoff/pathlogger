@@ -23,18 +23,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AEh-i9-q4D">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <variation key="heightClass=regular" ambiguous="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                </variation>
-                                <variation key="widthClass=compact" ambiguous="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="163" y="78" width="515" height="465"/>
-                                </variation>
-                            </mapView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZaH-av-Swy">
                                 <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ac9-ab-xh9">
@@ -43,7 +31,7 @@
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vgh-d4-jAA">
                                             <rect key="frame" x="541" y="9" width="51" height="31"/>
-                                            <color key="tintColor" red="0.1333333333" green="0.41960784309999999" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="onTintColor" red="1" green="0.20392156862745098" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="recAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="oSS-LN-1oN"/>
@@ -88,6 +76,18 @@
                                 </constraints>
                                 <blurEffect style="extraLight"/>
                             </visualEffectView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AEh-i9-q4D">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
+                                <variation key="heightClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
+                                <variation key="widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="163" y="78" width="515" height="465"/>
+                                </variation>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -95,7 +95,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZaH-av-Swy" secondAttribute="bottom" id="8eX-gf-519"/>
                             <constraint firstAttribute="trailing" secondItem="ZaH-av-Swy" secondAttribute="trailing" id="Afs-IC-zBb"/>
                             <constraint firstItem="ZaH-av-Swy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IuT-XS-qis"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AEh-i9-q4D" secondAttribute="bottom" id="U8s-iC-XNu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AEh-i9-q4D" secondAttribute="bottom" constant="50" id="U8s-iC-XNu"/>
                             <constraint firstAttribute="trailing" secondItem="AEh-i9-q4D" secondAttribute="trailing" id="WeL-xv-y3C"/>
                             <constraint firstItem="AEh-i9-q4D" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="miI-bi-sLZ"/>
                         </constraints>
@@ -123,16 +123,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1Mz-8k-FtN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1Mz-8k-FtN">
                                 <rect key="frame" x="0.0" y="67" width="600" height="533"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pathcell" id="cbZ-yY-ArN">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pathcell" rowHeight="60" id="cbZ-yY-ArN">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cbZ-yY-ArN" id="5ZQ-77-gUB">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="0.86216862409999995" green="0.90890216089999998" blue="0.98206792190000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -149,7 +150,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backAction:" destination="cWR-Tk-gyv" eventType="touchUpInside" id="BkK-XN-7aG"/>
+                                    <action selector="backAction" destination="cWR-Tk-gyv" eventType="touchUpInside" id="pQK-7N-gjq"/>
                                 </connections>
                             </button>
                         </subviews>
