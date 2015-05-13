@@ -1,11 +1,3 @@
-//
-//  PathManager.swift
-//  PathLogger
-//
-//  Created by Eugen Pirogoff on 28/03/15.
-//  Copyright (c) 2015 Eugen Pirogoff. All rights reserved.
-//
-
 import Foundation
 import CoreData
 import CoreLocation
@@ -14,7 +6,49 @@ class PathStore: NSObject {
   
   static var sharedInstance = PathStore()
   
+  var viewedPath: Path?
   var recordingPath: Path?
+  var recoding: Bool = false
+  
+  var recordingsCount : Int {
+    get {
+      return allPaths.count
+    }
+  }
+  
+  func startRecording() {
+    recordingPath = NSEntityDescription.insertNewObjectForEntityForName("Path", inManagedObjectContext: self.managedObjectContext!) as? Path
+    viewedPath = recordingPath
+    recoding = true
+  }
+  
+  func stopRecording() {
+    if let rp = recordingPath {
+      rp.endTimestamp = NSDate()
+      allPaths.append(rp)
+      recordingPath = nil
+      recoding = false
+      saveContext()
+    }
+  }
+  
+  func loadRecordingToView(index: Int) {
+    viewedPath = allPaths[index]
+  }
+
+  func loadRecording(index: Int) -> Path{
+    return allPaths[index]
+  }
+  
+  func removeRecordingAt(index: Int) {
+    allPaths.removeAtIndex(index)
+  }
+  
+  func addLocation(location: CLLocation){
+    if recoding {
+      recordingPath?.addLocation(location)
+    }
+  }
   
   private lazy var allPaths : [Path] = {
     let fetchRequests = NSFetchRequest(entityName: "Path")
@@ -24,35 +58,8 @@ class PathStore: NSObject {
       return fetchResults
     }
     return [Path]()
-  }()
+    }()
   
-  var count : Int {
-    get {
-      return allPaths.count
-    }
-  }
-  
-  func createPath() {
-    recordingPath = NSEntityDescription.insertNewObjectForEntityForName("Path", inManagedObjectContext: self.managedObjectContext!) as? Path
-  }
-  
-  func savePath() {
-    if let rp = recordingPath {
-      rp.endTimestamp = NSDate()
-      allPaths.append(rp)
-      recordingPath = nil
-      saveContext()
-    }
-  }
-  
-  func loadPathAt(index: Int) -> Path {
-    return allPaths[index]
-  }
-  
-  func removePathAt(index: Int) {
-    allPaths.removeAtIndex(index)
-  }
-    
   // MARK: - Core Data stack
   lazy var applicationDocumentsDirectory: NSURL = {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "com.alpinepipeline.test" in the application's documents Application Support directory.

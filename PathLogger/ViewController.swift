@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  PathLogger
-//
-//  Created by Eugen Pirogoff on 27/03/15.
-//  Copyright (c) 2015 Eugen Pirogoff. All rights reserved.
-//
-
 import UIKit
 import MapKit
 import CoreLocation
@@ -18,8 +10,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var controlsView: UIVisualEffectView!
   
   var locationmanager : CLLocationManager?
-  let pathstore: PathStore = PathStore.sharedInstance
-//  let act = Interactor.sharedInstance
+  let pathstore = PathStore.sharedInstance
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,31 +20,26 @@ class ViewController: UIViewController {
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(true)
-//    if let viewedPath = pathstore.currentPath {
-//      mapView.addOverlay(viewedPath.polyline)
-//    }
+    updateViewedOverlays()
+    setRegionToViewedPath()
   }
-  
+
   override func viewWillDisappear(animated: Bool) {
     super.viewWillDisappear(true)
-    if let overlays = mapView.overlays {
-      mapView.removeOverlays(overlays)
-    }
   }
 
   @IBAction func recAction(sender: UISwitch) {
     if sender.on {
       initCL()
       startCL()
-      pathstore.createPath()
+      pathstore.startRecording()
     } else {
       stopCL()
-      pathstore.savePath()
+      pathstore.stopRecording()
     }
   }
 
@@ -111,11 +97,25 @@ extension ViewController: CLLocationManagerDelegate {
   }
   
   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-//    if let location = locations.last as? CLLocation {
-//      self.pathstore.currentPath?.addLocation(location)
-//      mapView.removeOverlay(self.pathstore.currentPath?._oldPolyline)
-//      mapView.addOverlay(self.pathstore.currentPath?.polyline)
-//    }
+    if let location = locations.last as? CLLocation {
+      pathstore.addLocation(location)
+      updateViewedOverlays()
+    }
+  }
+  
+  func updateViewedOverlays(){
+    mapView.removeOverlays(mapView.overlays)
+    if let vp = pathstore.viewedPath {
+        mapView.addOverlay(vp.polyline)
+    }
+  }
+  
+  func setRegionToViewedPath(){
+    if let vp = pathstore.viewedPath {
+      let rect = vp.polyline.boundingMapRect
+      let region = MKCoordinateRegionForMapRect(rect)
+      mapView.setRegion(region, animated: true)
+    }
   }
 }
 
