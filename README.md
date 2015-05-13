@@ -7,9 +7,7 @@ It is prodly made with:
 - CoreLocation
 - MapKit
 
-
-![Start Screen](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/1_startup.png) ![Start Screen](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/2_recording.png) ![Start Screen](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/3_recordings.png)
-
+![Start](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/1_startup.png) ![Recording](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/2_recording.png) ![Recordings](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/3_recordings.png) ![Deletion](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/4_deleting.png)
 
 # ToDo
 - [ ] [bug fixes](https://github.com/eugenpirogoff/PathLogger/issues) 
