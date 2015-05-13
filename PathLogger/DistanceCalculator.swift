@@ -1,11 +1,3 @@
-//
-//  DistanceCalculator.swift
-//  PathLogger
-//
-//  Created by Eugen Pirogoff on 28/03/15.
-//  Copyright (c) 2015 Eugen Pirogoff. All rights reserved.
-//
-
 import Foundation
 import CoreLocation
 

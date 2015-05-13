@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  PathLogger
-//
-//  Created by Eugen Pirogoff on 27/03/15.
-//  Copyright (c) 2015 Eugen Pirogoff. All rights reserved.
-//
-
 import UIKit
 import CoreData
 
