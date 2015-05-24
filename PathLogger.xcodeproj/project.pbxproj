@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4C03CCA41B038EFD00456CB9 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB99D61AC601C200913A3C /* UIColorExtension.swift */; };
+		4C27CFCD1B0FAE8500B64FB1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C27CFCC1B0FAE8500B64FB1 /* MapKit.framework */; };
 		4CD59B081AC5ED7500ED4324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD59B071AC5ED7500ED4324 /* AppDelegate.swift */; };
 		4CD59B0B1AC5ED7500ED4324 /* PathLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CD59B091AC5ED7500ED4324 /* PathLogger.xcdatamodeld */; };
 		4CD59B0D1AC5ED7500ED4324 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD59B0C1AC5ED7500ED4324 /* ViewController.swift */; };
 		4CD59B101AC5ED7500ED4324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD59B0E1AC5ED7500ED4324 /* Main.storyboard */; };
 		4CD59B121AC5ED7500ED4324 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD59B111AC5ED7500ED4324 /* Images.xcassets */; };
 		4CD59B211AC5ED7500ED4324 /* PathLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD59B201AC5ED7500ED4324 /* PathLoggerTests.swift */; };
-		4CD59B2B1AC5EDB500ED4324 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD59B2A1AC5EDB500ED4324 /* MapKit.framework */; };
 		4CD59B2D1AC5EDE900ED4324 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD59B2C1AC5EDE900ED4324 /* CoreData.framework */; };
-		4CD59B2F1AC5EDEF00ED4324 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD59B2E1AC5EDEF00ED4324 /* CoreGraphics.framework */; };
 		4CD59B311AC5EDF700ED4324 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD59B301AC5EDF700ED4324 /* CoreLocation.framework */; };
 		4CFB99D31AC5F4EA00913A3C /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CFB99D21AC5F4EA00913A3C /* ionicons.ttf */; };
 		4CFB99D41AC5F4EA00913A3C /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CFB99D21AC5F4EA00913A3C /* ionicons.ttf */; };
@@ -42,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C27CFCA1B0FA49D00B64FB1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		4C27CFCC1B0FAE8500B64FB1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4CD59B021AC5ED7500ED4324 /* PathLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD59B061AC5ED7500ED4324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD59B071AC5ED7500ED4324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,9 +53,7 @@
 		4CD59B1A1AC5ED7500ED4324 /* PathLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PathLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD59B1F1AC5ED7500ED4324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD59B201AC5ED7500ED4324 /* PathLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathLoggerTests.swift; sourceTree = "<group>"; };
-		4CD59B2A1AC5EDB500ED4324 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4CD59B2C1AC5EDE900ED4324 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		4CD59B2E1AC5EDEF00ED4324 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4CD59B301AC5EDF700ED4324 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4CFB99D21AC5F4EA00913A3C /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		4CFB99D61AC601C200913A3C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = ../UIColorExtension.swift; sourceTree = "<group>"; };
@@ -69,10 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C27CFCD1B0FAE8500B64FB1 /* MapKit.framework in Frameworks */,
 				4CD59B311AC5EDF700ED4324 /* CoreLocation.framework in Frameworks */,
-				4CD59B2F1AC5EDEF00ED4324 /* CoreGraphics.framework in Frameworks */,
 				4CD59B2D1AC5EDE900ED4324 /* CoreData.framework in Frameworks */,
-				4CD59B2B1AC5EDB500ED4324 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,10 +157,9 @@
 		4CD59B321AC5EE0500ED4324 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C27CFCC1B0FAE8500B64FB1 /* MapKit.framework */,
 				4CD59B301AC5EDF700ED4324 /* CoreLocation.framework */,
-				4CD59B2E1AC5EDEF00ED4324 /* CoreGraphics.framework */,
 				4CD59B2C1AC5EDE900ED4324 /* CoreData.framework */,
-				4CD59B2A1AC5EDB500ED4324 /* MapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -334,6 +331,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4CD59B0F1AC5ED7500ED4324 /* Base */,
+				4C27CFCA1B0FA49D00B64FB1 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -448,8 +446,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 12;
-				DYLIB_CURRENT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 17;
+				DYLIB_CURRENT_VERSION = 17;
 				INFOPLIST_FILE = PathLogger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
