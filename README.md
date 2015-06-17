@@ -7,6 +7,13 @@ It is prodly made with:
 - CoreLocation
 - MapKit
 
+
+
+![Alt text](https://raw.githubusercontent.com/eugenpirogoff/pathlogger/master/tmp/Download_on_the_App_Store_Badge_US-UK_135x40.svg)
+<img src="https://raw.githubusercontent.com/eugenpirogoff/pathlogger/master/tmp/Download_on_the_App_Store_Badge_US-UK_135x40.svg">
+
+
+
 ![Start](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/1_startup.png) ![Recording](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/2_recording.png) ![Recordings](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/3_recordings.png) ![Deletion](https://github.com/eugenpirogoff/PathLogger/raw/master/tmp/4_deleting.png)
 
 # ToDo
