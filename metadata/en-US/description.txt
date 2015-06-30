@@ -1,0 +1,1 @@
+PathLogger can record your GPS location in the background.
